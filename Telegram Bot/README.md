@@ -14,7 +14,7 @@ curl https://api.telegram.org/bot<APIKEY>/getUpdates
 4. Add the chatID and API key into telegram.cns and check the path to Cobalt Strike is correct.
 
 
-Run in tmux session:
+5. Run in tmux session:
 ```
 ./agscript localhost 50050 TeleBot <team server pw> ./agscripts/telegram.cns
 ```
