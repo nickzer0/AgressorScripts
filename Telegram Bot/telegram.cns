@@ -1,6 +1,9 @@
 on beacon_initial {
-   println("New Beacon: " . beacon_info($1, "computer"));
    $comp = beacon_info($1, "computer");
-   println($comp);
-   exec("/opt/cobaltstrike/agscripts/send.sh $comp");
+   $user = beacon_info($1, "user");
+   $ext = beacon_info($1, "external");
+   $int = beacon_info($1, "internal");
+   $proc = beacon_info($1, "process");
+   println("Beacon: $user - $comp - $ext - $int - $proc");
+   exec("/opt/cobaltstrike/script/push.sh $user $comp $ext $int $proc");
 }
